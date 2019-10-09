@@ -1,0 +1,15 @@
+/*
+  Comments
+*/
+.p-comments {
+  margin-top: 1rem;
+  padding: .5em;
+}
+
+.p-comments__inner {
+  padding: 0  2.5rem;
+}
+
+.p-comments__list {
+  background-color: #fff;
+}

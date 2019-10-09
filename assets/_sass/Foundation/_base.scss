@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+//====================================
+//  Elements
+//====================================
+
+body {
+  background-color: #30373F;
+  color: $primary-text-color;
+  font-family: 'Josefin Sans', 'Noto Sans JP', sans-serif;
+  @include mq(tab) {
+    // padding-top: 5em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+     color: #fafafa;
+    }
+  &:after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, .5);
+    content: '';
+    opacity: 0;
+    -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+  }
+
+  &.is-active-drower {
+    overflow: hidden;
+
+    &:after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  transition: background-color .3s ease-in-out, border .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out;
+}

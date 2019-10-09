@@ -1,0 +1,126 @@
+@charset 'UTF-8';
+//====================================
+//  Grid
+//====================================
+$column: 12; // グリッド数の設定
+
+$gutter-sp: 8px; // スマホ時の間隔
+$gutter-tab: 16px; // タブレット時の間隔
+$gutter-lap: 32px; // ラップトップ時の間隔
+$gutter-desk: 40px; // デスクトップ時の間隔
+
+.c-grid {
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 0;
+
+  &__item {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    vertical-align: top;
+    text-align: left;
+    font-size: medium;
+    width: 100%;
+  }
+
+  &.-gutter {
+    display: block;
+    margin: -($gutter-sp / 2);
+    width: auto;
+
+    & > .c-grid__item {
+      border: ($gutter-sp / 2) solid transparent;
+      background-clip: padding-box;
+    }
+  }
+
+  &__item {
+
+    @for $i from 1 through $column {
+      &.-sp#{$i}Of#{$column} {
+        width: percentage($i / $column);
+      }
+    }
+
+    &.-spFive {
+      width: 20%;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .c-grid {
+    &.-gutter {
+      margin: -($gutter-tab / 2);
+
+      & > .c-grid__item {
+        border-width: ($gutter-tab / 2);
+      }
+    }
+
+    &__item {
+      @for $i from 1 through $column {
+        &.-tab#{$i}Of#{$column} {
+          width: percentage($i / $column);
+        }
+      }
+
+      &.-tabFive {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .c-grid {
+    &.-gutter {
+      margin: -($gutter-lap / 2);
+
+      & > .c-grid__item {
+        border-width: ($gutter-lap / 2);
+      }
+    }
+
+    &__item {
+      @for $i from 1 through $column {
+        &.-lap#{$i}Of#{$column} {
+          width: percentage($i / $column);
+        }
+      }
+
+      &.-lapFive {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .c-grid {
+    &.-gutter {
+      margin: -($gutter-desk / 2);
+
+      & > .c-grid__item {
+        border-width: ($gutter-desk / 2);
+      }
+    }
+
+    &__item {
+      @for $i from 1 through $column {
+        &.-desk#{$i}Of#{$column} {
+          width: percentage($i / $column);
+        }
+      }
+
+      &.-deskFive {
+        width: 20%;
+      }
+    }
+  }
+}

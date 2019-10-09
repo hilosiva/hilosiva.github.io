@@ -1,0 +1,95 @@
+@charset 'UTF-8';
+/*
+  Hamburger
+*/
+$position: right;
+$line-color: $primary-text-color;
+$active-line-color: #fff;
+
+
+// setting
+$right: 2.5%;
+$left: auto;
+@if $position == left {
+  $right: auto;
+  $left: 2.5%;
+}
+
+.p-hamburger {
+  position: absolute;
+  top: 0;
+  right: $right;
+  bottom: 0;
+  left: $left;
+  z-index: 2;
+  margin: auto 0;
+  width: 24px;
+  height: 24px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: 0 0 40px transparent;
+  transition: all .3s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 1px #212121;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    margin: auto;
+    width: 75%;
+    height: 2px;
+    border-radius: .25em;
+    background-color: $line-color;
+    transition: transform .2s ease-in-out;
+  }
+
+  &__line:before,
+  &__line:after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: inherit;
+    content: '';
+    transition: inherit;
+  }
+
+  &__line:before {
+    top: -5px;
+  }
+
+  &__line:after {
+    top: 5px;
+  }
+
+  @include mq(tab) {
+    display: none;
+  }
+
+  .is-drawerActive & {
+    &__line {
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        top: 0;
+        background-color: $active-line-color;
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

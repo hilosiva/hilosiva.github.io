@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+//============================================
+//  MIXIN
+//============================================
+
+//  font-sizeの計算
+//--------------------------------------------
+@mixin fontsize($size) {
+  font-size: $size + px;
+  font-size: ($size / $base-font-size) + rem;
+}
+
+
+//  Clear Fix
+//--------------------------------------------
+@mixin clearfix($mode: overflow) {
+  @if $mode == pie {
+    &:after {
+      display: table;
+      clear: both;
+      content: '';
+    }
+  }@else {
+    overflow: hidden;
+  }
+}
+
+
+//  Media Queries
+//--------------------------------------------
+@mixin mq($breakpoint, $type: min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if($type == max) {
+      $width: map-get($breakpoints, $breakpoint);
+      $width: $width - 1;
+      @media screen and (max-width: #{$width}) {
+        @content;
+      }
+    }@else if($type == min) {
+      @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+  }
+}

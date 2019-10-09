@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+/*
+  Header
+*/
+.p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+
+  }
+
+
+  &__nav {
+
+  }
+
+  &__follow {
+
+  }
+
+  &__snsList {
+    display: flex;
+    flex-wrap: wrap;
+
+    li  {
+      margin-right: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      color: $primary-text-color;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: 1px solid $primary-text-color;
+      text-align: center;
+    }
+  }
+
+}
