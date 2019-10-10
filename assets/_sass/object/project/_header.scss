@@ -8,16 +8,25 @@
   align-items: center;
 
   &__title {
-
+    .no-js &,
+    .is-loaded & {
+      animation: slideTopIn .5s ease-in-out 1.2s both;
+    }
   }
 
 
   &__nav {
-
+    .no-js &,
+    .is-loaded & {
+      animation: slideTopIn .5s ease-in-out 1.4s both;
+    }
   }
 
   &__follow {
-
+    .no-js &,
+    .is-loaded & {
+      animation: slideTopIn .5s ease-in-out 1.6s both;
+    }
   }
 
   &__snsList {

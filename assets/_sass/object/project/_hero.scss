@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+/*
+  Hero
+*/
+.p-hero {
+  padding: 5rem 0;
+
+  &__copy {
+    display: inline-block;
+    color: $accent-color;
+    font-size: set-size(80px);
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  &__job {
+    display: inline-block;
+    .no-js &,
+    .is-loaded & {
+      animation: slideLeftIn .5s ease-in-out 2s both;
+    }
+  }
+  &__name {
+    display: inline-block;
+    font-weight: 600;
+    .no-js &,
+    .is-loaded & {
+      animation: slideLeftIn .5s ease-in-out 2.2s both;
+    }
+  }
+
+  &__text{
+    line-height: 2;
+    margin-bottom: 1.5rem;
+
+    .no-js &,
+    .is-loaded & {
+      animation: fadeIn .5s ease-in-out 3.2s both;
+    }
+  }
+
+  &__list {
+    width: 50%;
+
+    .no-js &,
+    .is-loaded & {
+      animation: fadeIn .5s ease-in-out 3.2s both;
+    }
+    li {
+      display: inline-block;
+      white-space: nowrap;
+
+      &:after {
+        content: ' / ';
+      }
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+  }
+
+  &__canvas {
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vw;
+    z-index: -1;
+  }
+}

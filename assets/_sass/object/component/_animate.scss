@@ -1,0 +1,60 @@
+
+@charset 'UTF-8';
+/*
+  Animate
+*/
+.c-animate {
+  transition: all .5s ease-in-out;
+
+  &.-fadeIn {
+    opacity: 0;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  &.-zoomIn {
+
+    transform: scale(.5);
+    opacity: 0;
+    &.is-active {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+
+@keyframes slideLeftIn {
+  0% {
+      transform: translate3d(4rem, 0, 0);
+      opacity: 0;
+      // text-shadow: 48px 0 80px rgba(255, 255, 255, .5);
+  }
+  100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      // text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes slideTopIn {
+  0% {
+      transform: translate3d(0, -10%, 0);
+      opacity: 0;
+  }
+  100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}

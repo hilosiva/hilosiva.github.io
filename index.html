@@ -1,87 +1,116 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
+  <title>Shibata Hironori | Web Creator</title>
   <link rel="stylesheet" href="assets/css/common.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Noto+Sans+JP:400,700&display=swap&subset=japanese,latin-ext" rel="stylesheet">
 </head>
 <body>
-  <header class="l-header p-header" lang="en">
-    <h1 class="p-header__title">
-      <a href="./" class="p-logo">
-        Shibata Hironori<br>
-        UX Enginner
-      </a>
-    </h1>
-    <nav class="p-header__nav">
-      <h2 class="c-altText">サイト内メニュー</h2>
-      <button type="button" class="c-button p-hamberger">
-        <span class="p-hamberger__line">
-          <span class="c-altText">メニューを開閉</span>
-        </span>
-      </button>
-      <ul id="globalNav" class="p-globalNav" lang="en">
-        <li><a href="">About Me</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Management</a></li>
-      </ul>
-    </nav>
-    <div class="p-header__follow">
-      <ul class="p-header__snsList" lang="en">
-        <li><a href=""><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
-        <li><a href=""><i class="fab fa-github" aria-label="GitHub"></i></a></li>
-        <li><a href=""><i class="fab fa-codepen" aria-label="CodePen"></i></a></li>
-      </ul>
-    </div>
-  </header>
-  <div class="p-intro">
-    <span class="p-intro__text">Shibata Hironori</span>
-  </div>
-
-  <main class="l-main">
-    <div class="p-hero">
-      <dl class="p-hero__description" lang="en">
-        <dt>Shibata<br>Hironori</dt>
-        <dd>UX Enginner / Dirctor / Teacher</dd>
-      </dl>
-      <canvas id="myCanvas" class="p-hero__canvas" width="960" height="540">
-      </canvas>
-    </div>
-
-    <section class="p-section">
-      <h2>
-          About<br>
-          Webのポテンシャルを発揮せよ。
-        </h2>
-
-      <section>
-        <h3>Skill</h3>
-
-        <ul class="p-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>jQuery</li>
-          <li>PHP</li>
-          <li>MySQL</li>
-          <li>Vue</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>XD</li>
-          <li>Design</li>
-          <li>Direction</li>
-          <li>Branding</li>
-          <li>SEO</li>
+  <div id="app">
+    <header class="l-header p-header" lang="en">
+      <h1 class="p-header__title">
+        <a href="./" class="p-logo">
+          Shibata Hironori<br>
+          Web Creator
+        </a>
+      </h1>
+      <nav class="p-header__nav">
+        <h2 class="c-altText">サイト内メニュー</h2>
+        <button type="button" class="c-button p-hamberger" @click="drawer" aria-controls="global-nav" :aria-expanded="isActive ? 'true' : 'false'">
+          <span class="p-hamberger__line">
+            <span class="c-altText">メニューを開閉</span>
+          </span>
+        </button>
+        <ul id="globalNav" class="p-globalNav" :class="{ 'is-drawerActive': isActive }" lang="en">
+          <li><a href="">About Me</a></li>
+          <li><a href="">Projects</a></li>
+          <li><a href="">Management</a></li>
         </ul>
-      </section>
-    </section>
+      </nav>
+      <div class="p-header__follow">
+        <ul class="p-header__snsList" lang="en">
+          <li><a href=""><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-github" aria-label="GitHub"></i></a></li>
+          <li><a href=""><i class="fab fa-codepen" aria-label="CodePen"></i></a></li>
+        </ul>
+      </div>
+    </header>
 
-  </main>
-  <script src=" https://code.createjs.com/1.0.0/createjs.min.js"> </script>
+
+    <main class="l-main">
+      <section class="p-hero" lang="en">
+        <div class="l-container">
+          <h2 class="p-hero__copy">
+            <span class="p-hero__job">Web Creator</span><br>
+            <b class="p-hero__name">Shibata Hironori</b>
+          </h2>
+          <p class="p-hero__text">
+            Webデザインや様々アクセシビリティを意識したデザインを。<br>
+            ワクワクするようなものをデザインしたい。
+          </p>
+          <ul class="p-hero__list">
+            <li>Web Marketing</li>
+            <li>UX Enginner</li>
+            <li>UI/UX Design</li>
+            <li>Front-end Development</li>
+            <li>Accesibility</li>
+            <li>School Teature</li>
+            <li>Community Owner</li>
+            <li>Guiter</li>
+            <li>SnowBrding</li>
+            <li>Former apparel salesperson</li>
+            <li>Wakuwaku Sasetai</li>
+          </ul>
+        </div>
+        <!-- /.l-container -->
+        <!-- <canvas id="canvas" class="p-hero__canvas" width="960" height="540">
+        </canvas> -->
+      </section>
+
+      <section class="p-section">
+        <h2>
+            About<br>
+            Webのポテンシャルを発揮せよ。
+          </h2>
+
+        <section>
+          <h3>Skill</h3>
+
+          <ul class="p-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Vue</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>XD</li>
+            <li>Design</li>
+            <li>Direction</li>
+            <li>Branding</li>
+            <li>SEO</li>
+          </ul>
+        </section>
+      </section>
+
+    </main>
+  </div>
+  <!-- /#app -->
+  <!-- <script src=" https://code.createjs.com/1.0.0/createjs.min.js"> </script> -->
   <script src="https://kit.fontawesome.com/9ae9c3f776.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+  <script src="assets/js/libs/intersection-observer.js"></script>
   <script src="assets/js/main.js" defer></script>
+
+
+  <script>
+
+  </script>
 </body>
 </html>

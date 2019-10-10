@@ -2,14 +2,6 @@
 /*
   Main
 -----------------------------------------------------*/
-
 .l-main {
   clear: both;
-}
-
-@include mq(tab) {
-  .l-main {
-    width: percentage(824px / $content-width);
-    float: left;
-  }
 }
