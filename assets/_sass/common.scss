@@ -15,10 +15,8 @@
 ===================================================== */
 @import 'Layout/centering';
 @import 'Layout/header';
-
-@import 'Layout/contents';
 @import 'Layout/main';
-@import 'Layout/sub';
+@import 'Layout/contents';
 @import 'Layout/footer';
 
 /* =====================================================
@@ -40,15 +38,17 @@
   3.2 - Project
 -----------------------------------------------------*/
 @import 'object/project/header';
-@import 'object/project/global-nav';
 @import 'object/project/logo';
+@import 'object/project/global-nav';
+@import 'object/project/sns-nav';
+@import 'object/project/drawer';
 @import 'object/project/hero';
-@import 'object/project/intro';
-// @import 'object/project/comments';
+@import 'object/project/hamburger';
+@import 'object/project/project';
 // @import 'object/project/pagination';
-// @import 'object/project/post-categories';
+
 // @import 'object/project/searchform';
-// @import 'object/project/hamburger';
+
 // @import 'object/project/widget';
 
 /*

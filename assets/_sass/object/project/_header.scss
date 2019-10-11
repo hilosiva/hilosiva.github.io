@@ -3,49 +3,28 @@
   Header
 */
 .p-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include mq(tab) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
   &__title {
-    .no-js &,
-    .is-loaded & {
-      animation: slideTopIn .5s ease-in-out 1.2s both;
-    }
+    position: relative;
+    z-index: 1;
   }
 
 
   &__nav {
-    .no-js &,
-    .is-loaded & {
-      animation: slideTopIn .5s ease-in-out 1.4s both;
-    }
+    flex-grow: 1;
   }
 
   &__follow {
-    .no-js &,
-    .is-loaded & {
-      animation: slideTopIn .5s ease-in-out 1.6s both;
-    }
+
   }
 
   &__snsList {
-    display: flex;
-    flex-wrap: wrap;
 
-    li  {
-      margin-right: 1rem;
-    }
-
-    a {
-      display: inline-block;
-      color: $primary-text-color;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      border: 1px solid $primary-text-color;
-      text-align: center;
-    }
   }
 
 }

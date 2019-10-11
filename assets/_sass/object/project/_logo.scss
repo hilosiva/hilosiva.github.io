@@ -5,17 +5,18 @@
 .p-logo {
   display: inline-block;
   font-weight: 400;
-  padding: 2rem 1.788rem;
+  padding: 1.469rem .506rem;
   text-decoration: none;
   text-align: center;
-  font-size: set-size(12px);
+  font-size: set-size(10px);
   line-height: 1.25;
   color: $accent-color;
   background-color: $sub-color;
 
   @include mq(tab) {
-    // padding: 1em 0;
-    // font-size: 1.5em;
+    padding: 2rem 1.788rem;
+    font-size: set-size(12px);
+    line-height: 1.25;
   }
 
   &:before {
@@ -23,6 +24,16 @@
     display: block;
     margin-bottom: .125em;
     font-weight: bold;
-    font-size: set-size(48px);
+    font-size: set-size(24px);
+
+    @include mq(tab) {
+      margin-bottom: .125em;
+      font-size: set-size(48px);
+    }
+  }
+
+  .no-js &,
+  .is-loaded & {
+    animation: slideTopIn .5s ease-in-out 1.2s both;
   }
 }

@@ -155,12 +155,12 @@ const particle = function () {
 
 
 const scrollIn = function () {
-  const boxes = document.querySelectorAll(".c-animate");
+  const boxes = document.querySelectorAll(".js-animate");
   const boxesArray = Array.prototype.slice.call(boxes, 0);
 
   const options = {
     root: null,
-    rootMargin: "0px 0px -150px",
+    rootMargin: "0px 0px -160px",
     threshold: 0
   };
   const observer = new IntersectionObserver(doWhenIntersect, options);
@@ -176,7 +176,7 @@ const scrollIn = function () {
     const entriesArray = Array.prototype.slice.call(entries, 0);
     entriesArray.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-active");
+        entry.target.classList.add("is-animateActive");
       }
     });
   }
@@ -184,8 +184,12 @@ const scrollIn = function () {
 }
 
 
-
-
+/* =====================================================
+  Scroll
+===================================================== */
+function handleTouchMove(event) {
+  event.preventDefault();
+}
 
 /* =====================================================
   Vue
@@ -193,7 +197,7 @@ const scrollIn = function () {
 const app = new Vue({
   el: '#app',
   data: {
-    isActive: false,
+    isDrawerActive: false,
   },
   mounted: function () {
     document.body.classList.add('is-loaded');
@@ -202,7 +206,13 @@ const app = new Vue({
   },
   methods: {
     drawer: function () {
-      this.isActive = !this.isActive
+      this.isDrawerActive = !this.isDrawerActive;
+      if (this.isDrawerActive) {
+        document.body.classList.add('is-scrollStop');
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      } else {
+        document.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      }
     },
   },
 });

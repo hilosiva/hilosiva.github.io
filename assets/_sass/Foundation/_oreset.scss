@@ -292,6 +292,10 @@ template,
   cursor: pointer;
 }
 
+[aria-hidden="true"] {
+  display: none;
+}
+
 [aria-hidden='false'][hidden] {
   display: initial;
 }

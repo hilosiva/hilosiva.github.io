@@ -1,0 +1,67 @@
+@charset 'UTF-8';
+/*
+  Project
+*/
+.p-project {
+  position: relative;
+  padding-top: 61.8%;
+
+  @include mq(tab) {
+    padding-top: 0;
+  }
+
+  & + & {
+    margin-top: set-size(32px);
+
+    @include mq(tab) {
+      margin-top: set-size(64px);
+    }
+  }
+
+  &__body {
+    position: relative;
+    background-color: $sub-color;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+    z-index: 1;
+    margin-top: -10%;
+
+
+    @include mq(tab) {
+      position: absolute;
+      width: 40%;
+      top: 50%;
+      left: 0;
+      margin: 0;
+      transform: translateY(-50%);
+
+      .-reverse &{
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+  &__thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #eee;
+    padding-top: 61.8%;
+
+    img {
+      display: none;
+    }
+
+    @include mq(tab) {
+      position: static;
+      width: 80%;
+      margin-left: auto;
+
+      .-reverse & {
+        margin-left: 0;
+      }
+    }
+  }
+}

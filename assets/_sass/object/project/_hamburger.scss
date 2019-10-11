@@ -3,8 +3,8 @@
   Hamburger
 */
 $position: right;
-$line-color: $primary-text-color;
-$active-line-color: #fff;
+$line-color: $accent-color;
+$active-line-color: $accent-color;
 
 
 // setting
@@ -23,16 +23,18 @@ $left: auto;
   left: $left;
   z-index: 2;
   margin: auto 0;
-  width: 24px;
-  height: 24px;
+  width: set-size(48px);
+  height: set-size(48px);
   outline: 0;
-  border: 0;
+  border-radius: 50%;
+  border: solid 1px #666;
   background-color: transparent;
   box-shadow: 0 0 40px transparent;
   transition: all .3s ease-in-out;
-
+  &:hover,
   &:focus {
-    box-shadow: 0 0 0 1px #212121;
+    box-shadow: 0 0 0 1px $accent-color;
+    border: none;
   }
 
   &__line {
@@ -43,7 +45,7 @@ $left: auto;
     left: 0;
     display: block;
     margin: auto;
-    width: 75%;
+    width: set-size(24px);
     height: 2px;
     border-radius: .25em;
     background-color: $line-color;
@@ -74,8 +76,8 @@ $left: auto;
     display: none;
   }
 
-  .is-drawerActive & {
-    &__line {
+   & {
+    &[aria-expanded="true"] &__line {
       background-color: transparent;
 
       &:before,

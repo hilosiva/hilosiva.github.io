@@ -5,24 +5,12 @@
 
 .l-footer {
   clear: both;
-  padding: 1.5em 0;
-  background-color: $main-color;
-  color: $hint-text-color;
+  padding: set-size(40px) 0;
+  background-color: $sub-color;
+  text-align: center;
 
   @include mq(tab) {
-    padding: 3em 0;
+    padding: set-size(120px) 0;
   }
-
-  &__text {
-    margin-top: 1em;
-    color: $sub-color;
-    font-size: .75em;
-    text-align: center;
-
-    @include mq(tab) {
-      text-align: left;
-    }
-  }
-
 
 }

@@ -8,18 +8,22 @@
   &__copy {
     display: inline-block;
     color: $accent-color;
-    font-size: set-size(80px);
+    font-size: set-size(40px);
     letter-spacing: -.03em;
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 1.5rem;
+
+    @include mq(tab) {
+      font-size: set-size(80px);
+    }
   }
 
   &__job {
     display: inline-block;
     .no-js &,
     .is-loaded & {
-      animation: slideLeftIn .5s ease-in-out 2s both;
+      animation: slideRightIn .5s ease-in-out 2s both;
     }
   }
   &__name {
@@ -27,7 +31,7 @@
     font-weight: 600;
     .no-js &,
     .is-loaded & {
-      animation: slideLeftIn .5s ease-in-out 2.2s both;
+      animation: slideRightIn .5s ease-in-out 2.2s both;
     }
   }
 
@@ -37,16 +41,20 @@
 
     .no-js &,
     .is-loaded & {
-      animation: fadeIn .5s ease-in-out 3.2s both;
+      animation: fadeIn .5s ease-in-out 2.6s both;
     }
   }
 
   &__list {
-    width: 50%;
+
+
+    @include mq(tab) {
+      width: 50%;
+    }
 
     .no-js &,
     .is-loaded & {
-      animation: fadeIn .5s ease-in-out 3.2s both;
+      animation: fadeIn .5s ease-in-out 2.6s both;
     }
     li {
       display: inline-block;

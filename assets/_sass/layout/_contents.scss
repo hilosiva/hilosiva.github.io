@@ -4,10 +4,10 @@
 -----------------------------------------------------*/
 .l-contents {
   clear: both;
-  padding: set-size(24px) 0;
+  padding: set-size(32px) 0;
   overflow: hidden;
 
   @include mq(tab) {
-    padding: set-size(48px) 0;
+    padding: set-size(120px) 0;
   }
 }

@@ -6,9 +6,16 @@
 .c-heading {
 
   &.-primary {
-    $font-size: 20px;
-    font-size: set-size($font-size);
-    margin-bottom: set-size(16px, $font-size);
+    $font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: set-size($font-size);
+
+      [lang="en"] {
+        font-weight: 600;
+        font-size: set-size($font-size);
+      }
   }
 
 }
@@ -17,7 +24,12 @@
 @include mq(tab) {
   .c-heading {
     &.-primary {
-      font-size: 2em;
+      $font-size: 64px;
+      margin-bottom: set-size($font-size);
+
+      [lang="en"] {
+        font-size: set-size($font-size);
+      }
     }
   }
 }
