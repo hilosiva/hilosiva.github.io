@@ -1,0 +1,14 @@
+@charset 'UTF-8';
+/*
+  Break
+-----------------------------------------------------*/
+.u-break {
+  &.-tab {
+    display: none;
+
+    @include mq(tab) {
+      display: inline;
+    }
+  }
+
+}

@@ -6,11 +6,10 @@
 .l-footer {
   clear: both;
   padding: set-size(40px) 0;
-  background-color: $sub-color;
   text-align: center;
 
   @include mq(tab) {
-    padding: set-size(120px) 0;
+    // padding: set-size(120px) 0;
   }
 
 }
