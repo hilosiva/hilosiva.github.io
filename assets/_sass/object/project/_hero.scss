@@ -5,6 +5,10 @@
 .p-hero {
   padding: 5rem 0;
 
+  @include mq(tab) {
+    padding: 6rem 0;
+  }
+
   &__copy {
     display: inline-block;
     color: $accent-color;
@@ -21,6 +25,8 @@
 
   &__job {
     display: inline-block;
+
+
     .no-js &,
     .is-loaded & {
       animation: slideRightIn .5s ease-in-out 2s both;
@@ -36,9 +42,13 @@
   }
 
   &__text{
-    line-height: 2;
     margin-bottom: 1.5rem;
+    font-size: set-size(12px);
 
+    @include mq(tab) {
+      line-height: 2;
+      font-size: set-size(16px);
+    }
     .no-js &,
     .is-loaded & {
       animation: fadeIn .5s ease-in-out 2.6s both;
@@ -47,9 +57,11 @@
 
   &__list {
 
+    font-size: set-size(12px);
 
     @include mq(tab) {
       width: 50%;
+      font-size: set-size(16px);
     }
 
     .no-js &,

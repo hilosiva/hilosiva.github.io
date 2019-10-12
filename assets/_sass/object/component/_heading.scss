@@ -12,10 +12,11 @@
     font-size: 1rem;
     margin-bottom: set-size($font-size);
 
-      [lang="en"] {
-        font-weight: 600;
-        font-size: set-size($font-size);
-      }
+
+    [lang="en"] {
+      font-weight: 600;
+      font-size: set-size($font-size);
+    }
   }
 
 }

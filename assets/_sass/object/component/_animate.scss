@@ -30,6 +30,23 @@
     &.is-animateActive {
       animation: slideBottomIn .5s ease-in-out both;
     }
+
+    &.-radius {
+      .no-js &,
+      &.is-animateActive {
+        animation: slideBottomIn--radius .5s ease-in-out both;
+      }
+    }
+
+    &.-middle {
+      .no-js &,
+      &.is-animateActive {
+        animation: slideBottomIn .5s ease-in-out both;
+        @include mq(tab) {
+          animation: slideBottomIn--middle .5s ease-in-out both;
+        }
+      }
+    }
   }
 }
 
@@ -76,7 +93,7 @@
 
 @keyframes slideBottomIn {
   0% {
-      transform: translate3d(0, 30%, 0);
+      transform: translate3d(0, 20%, 0);
       opacity: 0;
   }
   100% {
@@ -135,5 +152,55 @@
   }
   100% {
     z-index: -2;
+  }
+}
+
+
+@keyframes slideBottomIn--radius {
+  0% {
+      transform: translate3d(0, 20%, 0);
+      opacity: 0;
+      border-radius: 60% 30% 50% 25%/50% 40% 50% 40%;
+      overflow: hidden;
+  }
+  25% {
+    border-radius: 50% 50% 60% 50%/30% 50% 20% 50%;
+  }
+  50% {
+    border-radius: 30% 60% 30% 40%/30% 60% 30% 40%;
+  }
+  75% {
+    border-radius: 20% 40% 30% 60%/10% 20% 30% 20%;
+  }
+  100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      border-radius: 0;
+      overflow: hidden;
+  }
+}
+
+@keyframes slideBottomIn--middle {
+  0% {
+      transform: translate3d(0, -30%, 0);
+      opacity: 0;
+  }
+  100% {
+      transform: translate3d(0, -50%, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes autoStretchLine {
+  0% {
+      height: 0;
+  }
+  50% {
+      height: 1em;
+      opacity: 1;
+  }
+  100% {
+      height: 1em;
+      opacity: 0;
   }
 }

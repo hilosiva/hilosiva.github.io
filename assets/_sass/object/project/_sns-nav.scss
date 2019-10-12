@@ -62,7 +62,8 @@ $list: 3;
       opacity: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $main-color;
 
       &:before {

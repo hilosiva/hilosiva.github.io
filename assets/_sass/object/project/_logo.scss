@@ -12,6 +12,17 @@
   line-height: 1.25;
   color: $accent-color;
   background-color: $sub-color;
+  transition: all .3s ease-in-out 0s;
+  box-shadow: 0 0 80px transparent;
+  text-shadow: 0 0 24px transparent;
+  border-radius: 0;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 32px -16px $accent-color;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    outline: none;
+  }
 
   @include mq(tab) {
     padding: 2rem 1.788rem;
@@ -25,6 +36,9 @@
     margin-bottom: .125em;
     font-weight: bold;
     font-size: set-size(24px);
+    transition: inherit;
+    text-shadow: inherit;
+
 
     @include mq(tab) {
       margin-bottom: .125em;

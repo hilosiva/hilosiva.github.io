@@ -49,7 +49,9 @@ $list: 8;
       overflow: hidden;
 
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &.is-navActive {
         background-color: transparent;
         color: $accent-color;
       }
@@ -67,7 +69,9 @@ $list: 8;
         transform: translateX(-110%);
       }
 
-      &:hover:after {
+      &:hover:after,
+      &:focus:after,
+      &.is-navActive:after {
         transform: translateX(0);
       }
     }

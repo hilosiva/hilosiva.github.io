@@ -175,8 +175,11 @@ const scrollIn = function () {
   function doWhenIntersect(entries) {
     const entriesArray = Array.prototype.slice.call(entries, 0);
     entriesArray.forEach(function (entry) {
+
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-animateActive");
+        entry.target.classList.add('is-animateActive');
+      } else {
+        // entry.target.classList.remove('is-animateActive');
       }
     });
   }
