@@ -11,7 +11,7 @@
   }
 
   & + & {
-    margin-top: set-size(32px);
+    margin-top: set-size(80px);
 
     @include mq(tab) {
       margin-top: set-size(160px);

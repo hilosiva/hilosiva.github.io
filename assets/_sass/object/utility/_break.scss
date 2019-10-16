@@ -3,6 +3,14 @@
   Break
 -----------------------------------------------------*/
 .u-break {
+
+  &.-sp {
+    @include mq(tab) {
+      display: none;
+    }
+  }
+
+
   &.-tab {
     display: none;
 
